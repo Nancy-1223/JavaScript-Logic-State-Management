@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tasks</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <h1>Tasks</h1>
+      <p id="summary" class="summary" aria-live="polite"></p>
+    </header>
+
+    <form id="add-form" class="add-form" autocomplete="off">
+      <label for="new-task" class="visually-hidden">New task</label>
+      <input id="new-task" type="text" placeholder="What needs doing?" maxlength="200" required>
+      <button type="submit" class="btn btn--primary">Add task</button>
+    </form>
+
+    <nav class="filters" aria-label="Filter tasks">
+      <button type="button" class="filter is-active" data-filter="all" aria-pressed="true">All <span class="count" data-count="all">0</span></button>
+      <button type="button" class="filter" data-filter="active" aria-pressed="false">Active <span class="count" data-count="active">0</span></button>
+      <button type="button" class="filter" data-filter="completed" aria-pressed="false">Completed <span class="count" data-count="completed">0</span></button>
+    </nav>
+
+    <ul id="task-list" class="task-list"></ul>
+    <p id="empty" class="empty" hidden></p>
+
+    <footer class="app__footer">
+      <button type="button" id="clear-completed" class="btn btn--quiet">Clear completed</button>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
